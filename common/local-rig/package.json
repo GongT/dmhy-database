@@ -1,0 +1,33 @@
+{
+	"name": "local-rig",
+	"version": "1.0.1",
+	"description": "",
+	"license": "WTFPL",
+	"scripts": {
+		"build": "",
+		"build:watch": "",
+		"clean": "",
+		"watch": ""
+	},
+	"private": true,
+	"dependencies": {
+		"@microsoft/api-extractor": "^7.33.6",
+		"@rushstack/eslint-config": "^3.1.1",
+		"@rushstack/eslint-patch": "^1.2.0",
+		"@rushstack/eslint-plugin": "^0.11.0",
+		"eslint": "^8.28.0",
+		"eslint-plugin-import": "^2.26.0",
+		"typescript": "^4.8.4"
+	},
+	"devDependencies": {
+		"@build-script/single-dog-asset": "latest"
+	},
+	"peerDependencies": {
+		"@build-script/single-dog-asset": "latest"
+	},
+	"peerDependenciesMeta": {
+		"@build-script/single-dog-asset": {
+			"optional": false
+		}
+	}
+}

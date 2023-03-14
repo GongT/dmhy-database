@@ -1,0 +1,90 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Fast Update",
+			"detail": "npm_config_prefer_offline=yes rush update",
+			"type": "process",
+			"icon": {
+				"id": "package",
+				"color": "terminal.ansiGreen"
+			},
+			"options": {
+				"env": {
+					"EXEC_BY_PNPM": "yes",
+					"npm_config_prefer_offline": "true"
+				}
+			},
+			"command": "node",
+			"args": ["${workspaceFolder}/common/scripts/install-run-rush.js", "update"],
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Dependencies",
+			"detail": "rush update --full",
+			"type": "process",
+			"icon": {
+				"id": "package"
+			},
+			"options": {
+				"env": { "EXEC_BY_PNPM": "yes" }
+			},
+			"command": "node",
+			"args": ["${workspaceFolder}/common/scripts/install-run-rush.js", "update", "--full"],
+			"problemMatcher": []
+		},
+		{
+			"label": "Format Code",
+			"detail": "rush pretty",
+			"icon": {
+				"id": "code"
+			},
+			"type": "process",
+			"windows": {
+				"type": "shell"
+			},
+			"command": "node",
+			"args": ["${workspaceFolder}/common/scripts/install-run-rush.js", "pretty"],
+			"problemMatcher": []
+		},
+		{
+			"label": "Watch All",
+			"detail": "rush build:watch",
+			"icon": {
+				"id": "eye-watch"
+			},
+			"type": "shell",
+			"command": "rush build:watch",
+			"problemMatcher": "$tsc-watch"
+		},
+		{
+			"label": "Build",
+			"detail": "rush build",
+			"icon": {
+				"id": "wrench"
+			},
+			"type": "shell",
+			"command": "rush build",
+			"problemMatcher": "$tsc",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Cleanup Everything",
+			"detail": "git clean -ffdx",
+			"icon": {
+				"id": "repo-delete",
+				"color": "terminal.ansiRed"
+			},
+			"type": "process",
+			"windows": {
+				"type": "shell"
+			},
+			"command": "node",
+			"args": ["${workspaceFolder}/common/scripts/install-run-rush.js", "distclean"],
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,27 @@
+{
+	"private": true,
+	"name": "search-api.dandanplay",
+	"version": "0.0.0",
+	"type": "module",
+	"license": "MIT",
+	"exports": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"scripts": {
+		"prepack": "heft build --clean --production",
+		"test": "heft test",
+		"lint": "heft build",
+		"build": "heft build --production",
+		"build:watch": "heft build --lite",
+		"watch": "heft build --watch",
+		"clean": "heft clean"
+	},
+	"dependencies": {
+		"core.library": "workspace:*"
+	},
+	"devDependencies": {
+		"@rushstack/heft": "^0.48.8",
+		"@types/node": "^18.15.2",
+		"local-rig": "workspace:*",
+		"tslib": "^2.5.0"
+	}
+}
